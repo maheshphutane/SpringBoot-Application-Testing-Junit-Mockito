@@ -12,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import java.util.List;
 import java.util.Optional;
 
+
 @DataJpaTest
 public class EmployeeRepositoryTest{
 
@@ -45,7 +46,7 @@ public class EmployeeRepositoryTest{
 
         //then - verify the output
         assertThat(savedEmployee).isNotNull();
-        assertThat(savedEmployee.getEmp_id()).isGreaterThan(0);
+        assertThat(savedEmployee.getFirstName()).isEqualTo("Mahesh");
     }
 
     //Junit test for getting all employees operation

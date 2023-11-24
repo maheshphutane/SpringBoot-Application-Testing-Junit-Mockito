@@ -37,6 +37,7 @@ public class EmployeeServiceTest {
     private Employee employee1;
     @BeforeEach
     public void setup(){
+
 //        employeeRepository = Mockito.mock(EmployeeRepository.class);
 //        employeeService = new EmployeeService(employeeRepository);
         employee = Employee.builder()
@@ -77,7 +78,7 @@ public class EmployeeServiceTest {
 
 
         BDDMockito.given(employeeRepository.findById(employee.getEmp_id())).willReturn(Optional.of(employee));
-       // BDDMockito.given(employeeRepository.save(employee)).willReturn(employee);
+        //BDDMockito.given(employeeRepository.save(employee)).willReturn(employee);
 
         //when - action or behaviour we are going to test
         org.junit.jupiter.api.Assertions.assertThrows(ResourceNotFoundException.class, ()->
